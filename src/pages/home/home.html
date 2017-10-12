@@ -1,14 +1,36 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Agenda Cultural
     </ion-title>
+    <ion-buttons>
+      <button ion-button icon-only (click)="menuToogle()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card *ngFor="let evento of eventos | async">
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="evento.icon">
+        </ion-avatar>
+        <h2>{{evento.nombre_org}}</h2>
+        <p>{{evento.fecha_inicio}}</p>
+      </ion-item>
+    
+      <img [src]="evento.espacios.imagen">
+    
+      <ion-card-content>
+        <p>{{evento.descrip}}</p>
+      </ion-card-content>
+      <ion-buttons end>
+        <button ion-button icon-left clear small>
+          <ion-icon name="share-alt"></ion-icon>
+          Compartir
+        </button>
+      </ion-buttons>  
+    </ion-card>
 </ion-content>
