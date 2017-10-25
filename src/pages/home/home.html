@@ -12,19 +12,20 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let evento of eventos | async">
+  <ion-card *ngFor="let evento of _obs.eventos">
       <ion-item>
         <ion-avatar item-start>
           <img [src]="evento.icon">
         </ion-avatar>
-        <h2>{{evento.nombre_org}}</h2>
+        <h2>{{evento.name}}</h2>
         <p>{{evento.fecha_inicio}}</p>
+        <p>{{evento.fecha_termino}}</p>
       </ion-item>
     
-      <img [src]="evento.espacios.imagen">
+      <img [src]="">
     
       <ion-card-content>
-        <p>{{evento.descrip}}</p>
+        <p>{{evento.descripcion}}</p>
       </ion-card-content>
       <ion-buttons end>
         <button ion-button icon-left clear small>
