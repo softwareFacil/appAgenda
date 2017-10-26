@@ -38,7 +38,13 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  verde:      #4ad52e,
+  paleta1:    #becf5c,
+  paleta2:    #a3cc70,
+  paleta3:    #8ad497,
+  paleta4:    #69d0b3,
+  paleta5:    #49c8ce
 );
 
 
@@ -84,5 +90,18 @@ $colors: (
 // Fonts
 // --------------------------------------------------
 
-@import "roboto";
-@import "noto-sans";
+//@import "roboto";
+//@import "noto-sans";
+
+@font-face {
+  font-family: 'CabinSketch';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/CabinSketch-Regular.otf') format('otf');
+  }
+
+  $font-family-base: "CabinSketch";
+  body{
+    font-family: "CabinSketch" !important;
+    font-weight: normal !important;
+  }
