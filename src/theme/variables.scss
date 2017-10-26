@@ -90,18 +90,5 @@ $colors: (
 // Fonts
 // --------------------------------------------------
 
-//@import "roboto";
-//@import "noto-sans";
-
-@font-face {
-  font-family: 'CabinSketch';
-  font-style: normal;
-  font-weight: normal;
-  src: url('../assets/fonts/CabinSketch-Regular.otf') format('otf');
-  }
-
-  $font-family-base: "CabinSketch";
-  body{
-    font-family: "CabinSketch" !important;
-    font-weight: normal !important;
-  }
+@import "roboto";
+@import "noto-sans";
