@@ -7,15 +7,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { TiposPage } from "../pages/tipos/tipos";
 //database
 import { ObtenerProvider } from '../providers/obtener/obtener';
 import { HttpModule } from '@angular/http';
 
+// plugins
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { Toast } from '@ionic-native/toast';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    TiposPage
   ],
   imports: [
     BrowserModule,
@@ -25,13 +30,16 @@ import { HttpModule } from '@angular/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    TiposPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ObtenerProvider
+    ObtenerProvider,
+    SocialSharing,
+    Toast
   ]
 })
 export class AppModule {}
