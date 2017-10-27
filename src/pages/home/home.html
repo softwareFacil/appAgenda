@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header >
   <ion-navbar>
     <ion-buttons>
       <button ion-button icon-only (click)="menuToogle()">
@@ -11,13 +11,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="contenido">
 
-  <ion-refresher (ionRefresh)="recargar($event)">
+  <ion-refresher (ionRefresh)="recargar($event)" color="paleta5">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-card *ngFor="let evento of _obs.eventos">
-    <ion-item>
+  <ion-card color="paleta1" *ngFor="let evento of _obs.eventos">
+    <ion-item color="paleta1">
       <ion-avatar item-start>
         <img [src]="evento.icon">
       </ion-avatar>

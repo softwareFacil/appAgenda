@@ -17,7 +17,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, private menuCtrl:MenuController,
                private _obs:ObtenerProvider, private statusBar: StatusBar, 
                private socialSharing: SocialSharing, private toast: Toast) {
-    this.statusBar.backgroundColorByHexString('#4ad52e');
+    this.statusBar.backgroundColorByHexString('#69d0b3');
     this._obs.getEventos().subscribe();
   }
 

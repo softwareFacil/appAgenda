@@ -1,21 +1,21 @@
 <ion-menu [content]="content">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Menu</ion-title>
+        <ion-title class="barra-menu">Menu</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content>
+    <ion-content class="barra-menu">
       <ion-list>
-        <button ion-item (click)="abrirPage(home)">
+        <button ion-item (click)="abrirPage(home)" class="barra-menu">
           Inicio
         </button>
-        <button ion-item (click)="abrirPage(tipos)">
+        <button ion-item (click)="abrirPage(tipos)" class="barra-menu">
           Tipo de actividad
         </button>
-        <button ion-item>
+        <button ion-item class="barra-menu"> 
           Disciplinas
         </button>
-        <button ion-item>
+        <button ion-item class="barra-menu">
           Lugares
         </button>
       </ion-list>

@@ -18,9 +18,9 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="contenido">
   <ion-list>
-    <button ion-item *ngFor="let tipo of tipos" (click)="selectTipo(tipo)">
+    <button ion-item *ngFor="let tipo of tipos" (click)="selectTipo(tipo)" color="paleta2">
       {{ tipo }}
     </button>
   </ion-list>
