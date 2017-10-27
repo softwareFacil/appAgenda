@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Agenda Cultural
-    </ion-title>
     <ion-buttons>
       <button ion-button icon-only (click)="menuToogle()">
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
+    <ion-title text-center>
+      Agenda Cultural
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -21,21 +21,21 @@
       <ion-avatar item-start>
         <img [src]="evento.icon">
       </ion-avatar>
-      <h2>{{evento.name}}</h2>
+      <h2 text-wrap>{{evento.name}}</h2>
       <p>{{evento.fecha_inicio}}</p>
       <p>{{evento.fecha_termino}}</p>
     </ion-item>
 
-    <img [src]="">
+    <img [src]="imagen(evento.image)">
 
     <ion-card-content>
       <p>{{evento.descripcion}}</p>
     </ion-card-content>
-    <!-- <ion-buttons end>
-      <button ion-button icon-left clear small>
+    <ion-buttons end>
+      <button ion-button icon-left clear small (click)="compartir(evento)">
         <ion-icon name="share-alt"></ion-icon>
         Compartir
       </button>
-    </ion-buttons> -->
+    </ion-buttons>
   </ion-card>
 </ion-content>
