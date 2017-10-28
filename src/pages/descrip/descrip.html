@@ -16,9 +16,9 @@
 <ion-content padding class="contenido">
   <ion-list>
     <ion-card>
-        <img [src]="imagen(evento.image)">
+      <img [src]="imagen(evento.image)">
     </ion-card>
-    
+
 
     <ion-item>
       <ion-avatar item-start>
@@ -33,13 +33,17 @@
       <p text-wrap>{{evento.descripcion}}</p>
     </ion-item>
     <ion-item>
-        <ion-icon name="call" item-start></ion-icon>
-        <ion-label>{{evento.fono}}</ion-label>
-      </ion-item>
+      <ion-icon name="call" item-start></ion-icon>
+      <ion-label>{{evento.fono}}</ion-label>
+    </ion-item>
     <ion-item>
       <ion-icon name="pin" item-start color="danger"></ion-icon>
       <ion-label>{{evento.ubicacion.nombre}}</ion-label>
-      <ion-icon name="map" item-end (click)="mostrarMapa()"></ion-icon>
+
+      <button ion-button icon-only item-end (click)="mostrarMapa()" color="secondary">
+        <ion-icon name="map"></ion-icon>
+      </button>
+
     </ion-item>
 
     <ion-item *ngIf=map>
