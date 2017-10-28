@@ -1,4 +1,4 @@
-<ion-header >
+<ion-header>
   <ion-navbar>
     <ion-buttons>
       <button ion-button icon-only (click)="menuToogle()">
@@ -16,7 +16,7 @@
   <ion-refresher (ionRefresh)="recargar($event)" color="paleta5">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-card color="paleta1" *ngFor="let evento of _obs.eventos">
+  <ion-card color="paleta1" *ngFor="let evento of (_obs.eventos)?.reverse()">
     <ion-item color="paleta1">
       <ion-avatar item-start>
         <img [src]="evento.icon">
@@ -32,10 +32,15 @@
       <p>{{evento.descripcion}}</p>
     </ion-card-content>
     <ion-buttons end>
+      <button ion-button icon-left clear small (click)="info(evento)">
+        <ion-icon name="information"></ion-icon>
+        Info
+      </button>
       <button ion-button icon-left clear small (click)="compartir(evento)">
         <ion-icon name="share-alt"></ion-icon>
         Compartir
       </button>
     </ion-buttons>
   </ion-card>
+  <p *ngIf="_obs.eventos.length == 0" text-center>Sin eventos</p>
 </ion-content>

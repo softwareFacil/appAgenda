@@ -17,6 +17,8 @@ export class HomePage {
   constructor(public navCtrl: NavController, private menuCtrl:MenuController,
                private _obs:ObtenerProvider, private statusBar: StatusBar, 
                private socialSharing: SocialSharing, private toast: Toast) {
+
+                
     this.statusBar.backgroundColorByHexString('#69d0b3');
     this._obs.getEventos().subscribe();
   }
@@ -46,6 +48,10 @@ export class HomePage {
 
   imagen(imagen:string){
     return "http://agenda.publibarrio.cl:3789/api/get-img/" + imagen;
+  }
+
+  info(evento:any){
+    
   }
 
 }

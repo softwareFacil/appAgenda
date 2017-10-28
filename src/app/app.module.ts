@@ -1,3 +1,4 @@
+import { ListaTiposPage } from './../pages/lista-tipos/lista-tipos';
 import { Http } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -20,18 +21,22 @@ import { Toast } from '@ionic-native/toast';
   declarations: [
     MyApp,
     HomePage,
-    TiposPage
+    TiposPage,
+    ListaTiposPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      backButtonText: 'Atras'
+    }),
     HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    TiposPage
+    TiposPage,
+    ListaTiposPage
   ],
   providers: [
     StatusBar,
