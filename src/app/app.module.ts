@@ -18,6 +18,9 @@ import { HttpModule } from '@angular/http';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Toast } from '@ionic-native/toast';
 
+// mapa
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -31,7 +34,10 @@ import { Toast } from '@ionic-native/toast';
     IonicModule.forRoot(MyApp,{
       backButtonText: 'Atras'
     }),
-    HttpModule
+    HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA6J0gcKRKXzclKg-uA5_0CUGfX03pPeWc'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

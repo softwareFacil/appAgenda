@@ -15,6 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DescripPage {
   evento:any;
+  map:boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.evento = this.navParams.get("evento");
@@ -22,6 +23,21 @@ export class DescripPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DescripPage');
+  }
+  ionViewDidLeave(){
+   this.map = false;
+  }
+
+  imagen(imagen:string){
+    return "http://agenda.publibarrio.cl:3789/api/get-img/" + imagen;
+  }
+
+  icon(imagen:string){
+    return "http://agenda.publibarrio.cl:3789/api/get-icon/" + imagen;
+  }
+
+  mostrarMapa(){
+    this.map = true;
   }
 
 }
