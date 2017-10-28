@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>listaTipos</ion-title>
+    <ion-title>lista de {{tipo}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,33 +15,37 @@
 
 <ion-content padding class="contenido">
 
-    <ion-refresher (ionRefresh)="recargar($event)" color="paleta5">
-        <ion-refresher-content></ion-refresher-content>
-    </ion-refresher>
+  <ion-refresher (ionRefresh)="recargar($event)" color="paleta5">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
-    <ion-card color="paleta1" *ngFor="let evento of (_obs.eventos)?.reverse()">
-        <ion-item color="paleta1">
-          <ion-avatar item-start>
-            <img [src]="evento.icon">
-          </ion-avatar>
-          <h2 text-wrap>{{evento.name}}</h2>
-          <p>{{evento.fecha_inicio}}</p>
-          <p>{{evento.fecha_termino}}</p>
-        </ion-item>
-    
-        <img [src]="imagen(evento.image)">
-    
-        <ion-card-content>
-          <p>{{evento.descripcion}}</p>
-        </ion-card-content>
-        <ion-buttons end>
-          <button ion-button icon-left clear small (click)="compartir(evento)">
-            <ion-icon name="share-alt"></ion-icon>
-            Compartir
-          </button>
-        </ion-buttons>
-      </ion-card>
+  <ion-card color="paleta1" *ngFor="let evento of (_obs.eventos)?.reverse()">
+    <ion-item color="paleta1">
+      <ion-avatar item-start>
+        <img [src]="evento.icon">
+      </ion-avatar>
+      <h2 text-wrap>{{evento.name}}</h2>
+      <p>{{evento.fecha_inicio}}</p>
+      <p>{{evento.fecha_termino}}</p>
+    </ion-item>
 
-      <p *ngIf="_obs.eventos.length == 0" text-center>Sin eventos</p>
+    <img [src]="imagen(evento.image)">
+
+    <ion-card-content>
+      <p>{{evento.descripcion}}</p>
+    </ion-card-content>
+    <ion-buttons end>
+      <button ion-button icon-left clear small (click)="info(evento)">
+        <ion-icon name="information"></ion-icon>
+        Info
+      </button>
+      <button ion-button icon-left clear small (click)="compartir(evento)">
+        <ion-icon name="share-alt"></ion-icon>
+        Compartir
+      </button>
+    </ion-buttons>
+  </ion-card>
+
+  <p *ngIf="_obs.eventos.length == 0" text-center>Sin eventos</p>
 
 </ion-content>

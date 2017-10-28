@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TiposPage } from "../pages/tipos/tipos";
+import { DescripPage } from "../pages/descrip/descrip";
 //database
 import { ObtenerProvider } from '../providers/obtener/obtener';
 import { HttpModule } from '@angular/http';
@@ -22,7 +23,8 @@ import { Toast } from '@ionic-native/toast';
     MyApp,
     HomePage,
     TiposPage,
-    ListaTiposPage
+    ListaTiposPage,
+    DescripPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { Toast } from '@ionic-native/toast';
     MyApp,
     HomePage,
     TiposPage,
-    ListaTiposPage
+    ListaTiposPage,
+    DescripPage
   ],
   providers: [
     StatusBar,

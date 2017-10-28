@@ -14,8 +14,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'descrip.html',
 })
 export class DescripPage {
+  evento:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.evento = this.navParams.get("evento");
   }
 
   ionViewDidLoad() {

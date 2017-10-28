@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Toast } from '@ionic-native/toast';
+import { DescripPage } from '../descrip/descrip';
 
 
 /**
@@ -51,6 +52,10 @@ export class ListaTiposPage {
       this._obs.getEventosType(this.tipo).subscribe();
       refresher.complete();
     }, 1000);
+  }
+
+  info(evento:any){
+    this.navCtrl.push(DescripPage, {"evento":evento});
   }
 
 }

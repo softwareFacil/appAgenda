@@ -1,3 +1,4 @@
+import { DescripPage } from './../descrip/descrip';
 import { Component } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
@@ -5,6 +6,7 @@ import { ObtenerProvider } from "../../providers/obtener/obtener";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Toast } from '@ionic-native/toast';
+
 
 @Component({
   selector: 'page-home',
@@ -51,7 +53,7 @@ export class HomePage {
   }
 
   info(evento:any){
-    
+    this.navCtrl.push(DescripPage, {"evento":evento});
   }
 
 }
