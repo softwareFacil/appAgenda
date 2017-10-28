@@ -37,7 +37,12 @@ export class DescripPage {
   }
 
   mostrarMapa(){
-    this.map = true;
+    if (this.map) {
+      this.map = false;
+    }else{
+      this.map = true;
+    }
+    
   }
 
 }

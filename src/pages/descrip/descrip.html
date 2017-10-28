@@ -14,30 +14,44 @@
 
 
 <ion-content padding class="contenido">
-  <img [src]="imagen(evento.image)">
-  <ion-item>
-    <ion-avatar item-start>
-      <img [src]="icon(evento.icon)">
-    </ion-avatar>
-    <h2 text-wrap>{{evento.name}}</h2>
-    <p>{{evento.fecha_inicio}}</p>
-    <p>{{evento.fecha_termino}}</p>
-  </ion-item>
-  <ion-item>
-    <ion-icon name="pin" item-start color="danger"></ion-icon>
-    <ion-label>{{evento.ubicacion.nombre}}</ion-label>
-    <ion-icon name="map" item-end (click)="mostrarMapa()"></ion-icon>
-  </ion-item>
+  <ion-list>
+    <ion-card>
+        <img [src]="imagen(evento.image)">
+    </ion-card>
+    
 
-  <ion-item>
-    <h2>Detalles</h2>
-    <p text-wrap>{{evento.descripcion}}</p>
-  </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="icon(evento.icon)">
+      </ion-avatar>
+      <h2 text-wrap>{{evento.name}}</h2>
+      <p>{{evento.fecha_inicio}}</p>
+      <p>{{evento.fecha_termino}}</p>
+    </ion-item>
+    <ion-item>
+      <h2>Detalles</h2>
+      <p text-wrap>{{evento.descripcion}}</p>
+    </ion-item>
+    <ion-item>
+        <ion-icon name="call" item-start></ion-icon>
+        <ion-label>{{evento.fono}}</ion-label>
+      </ion-item>
+    <ion-list-header>
 
-  <ion-item *ngIf=map>
-    <agm-map [latitude]="evento.ubicacion.lat" [longitude]="evento.ubicacion.long" [zoom]="17" [scrollwheel]="false" [mapDraggable]="false">
-      <agm-marker [latitude]="evento.ubicacion.lat" [longitude]="evento.ubicacion.long"></agm-marker>
-    </agm-map>
-  </ion-item>
+      Ubicacion
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="pin" item-start color="danger"></ion-icon>
+      <ion-label>{{evento.ubicacion.nombre}}</ion-label>
+      <ion-icon name="map" item-end (click)="mostrarMapa()"></ion-icon>
+    </ion-item>
+
+    <ion-item *ngIf=map>
+      <agm-map [latitude]="evento.ubicacion.lat" [longitude]="evento.ubicacion.long" [zoom]="17" [scrollwheel]="false" [mapDraggable]="false">
+        <agm-marker [latitude]="evento.ubicacion.lat" [longitude]="evento.ubicacion.long"></agm-marker>
+      </agm-map>
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>
