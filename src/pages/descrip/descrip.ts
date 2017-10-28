@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { CallNumber } from '@ionic-native/call-number';
+
 
 
 /**
@@ -19,7 +20,7 @@ export class DescripPage {
   evento:any;
   map:boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private callNumber: CallNumber) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private callNumber: CallNumber,private alerCtrl: AlertController) {
     this.evento = this.navParams.get("evento");
   }
 
@@ -47,9 +48,30 @@ export class DescripPage {
   }
 
   llamar(num){
-    this.callNumber.callNumber(num, true)
-    .then(() => console.log('Launched dialer!'))
-    .catch(() => console.log('Error launching dialer'));
+    let confirm = this.alerCtrl.create({
+      title: '¿Seguro?',
+      message: '¿Estas seguro que quieres llamar a ' + num + '?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Llamar',
+          handler: () => {
+            console.log('Agree clicked');
+            this.callNumber.callNumber(num, true)
+            .then(() => console.log('Launched dialer!'))
+            .catch(() => console.log('Error launching dialer'));
+          }
+        }
+      ]
+    });
+    confirm.present()
+
+    
   }
 
 }
