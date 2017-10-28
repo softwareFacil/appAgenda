@@ -1,6 +1,8 @@
+import { ListaTiposPage } from './../lista-tipos/lista-tipos';
 import { TIPOS } from './../../data/data.tipos';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+
 
 
 /**
@@ -28,7 +30,7 @@ export class TiposPage {
   }
 
   selectTipo(tipo:string){
-
+    this.navCtrl.push(ListaTiposPage,{ 'tipo':tipo });
   }
 
   menuToogle(){
