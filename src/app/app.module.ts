@@ -17,6 +17,7 @@ import { HttpModule } from '@angular/http';
 // plugins
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Toast } from '@ionic-native/toast';
+import { CallNumber } from '@ionic-native/call-number';
 
 // mapa
 import { AgmCoreModule } from '@agm/core';
@@ -53,7 +54,8 @@ import { AgmCoreModule } from '@agm/core';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ObtenerProvider,
     SocialSharing,
-    Toast
+    Toast,
+    CallNumber
   ]
 })
 export class AppModule {}

@@ -32,7 +32,7 @@
       <h2>Detalles</h2>
       <p text-wrap>{{evento.descripcion}}</p>
     </ion-item>
-    <ion-item>
+    <ion-item (click)="llamar(evento.fono)">
       <ion-icon name="call" item-start></ion-icon>
       <ion-label>{{evento.fono}}</ion-label>
     </ion-item>
