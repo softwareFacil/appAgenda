@@ -17,37 +17,37 @@ import { CallNumber } from '@ionic-native/call-number';
   templateUrl: 'descrip.html',
 })
 export class DescripPage {
-  evento:any;
-  map:boolean = false;
+  evento: any;
+  map: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private callNumber: CallNumber,private alerCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private callNumber: CallNumber, private alerCtrl: AlertController) {
     this.evento = this.navParams.get("evento");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DescripPage');
   }
-  ionViewDidLeave(){
-   this.map = false;
+  ionViewDidLeave() {
+    this.map = false;
   }
 
-  imagen(imagen:string){
+  imagen(imagen: string) {
     return "http://agenda.publibarrio.cl:3789/api/get-img/" + imagen;
   }
 
-  icon(imagen:string){
+  icon(imagen: string) {
     return "http://agenda.publibarrio.cl:3789/api/get-icon/" + imagen;
   }
 
-  mostrarMapa(){
+  mostrarMapa() {
     if (this.map) {
       this.map = false;
-    }else{
+    } else {
       this.map = true;
     }
   }
 
-  llamar(num){
+  llamar(num) {
     let confirm = this.alerCtrl.create({
       title: '¿Seguro?',
       message: '¿Estas seguro que quieres llamar a ' + num + '?',
@@ -63,15 +63,15 @@ export class DescripPage {
           handler: () => {
             console.log('Agree clicked');
             this.callNumber.callNumber(num, true)
-            .then(() => console.log('Launched dialer!'))
-            .catch(() => console.log('Error launching dialer'));
+              .then(() => console.log('Launched dialer!'))
+              .catch(() => console.log('Error launching dialer'));
           }
         }
       ]
     });
     confirm.present()
 
-    
+
   }
 
 }
