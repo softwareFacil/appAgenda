@@ -19,7 +19,7 @@
   <ion-card color="paleta1" *ngFor="let evento of (_obs.eventos)?.reverse()">
     <ion-item color="paleta1">
       <ion-avatar item-start>
-        <img [src]="evento.icon">
+        <img [src]="icon(evento.icon)">
       </ion-avatar>
       <h2 text-wrap>{{evento.name}}</h2>
       <p>{{evento.fecha_inicio}}</p>

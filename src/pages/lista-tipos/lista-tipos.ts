@@ -35,6 +35,10 @@ export class ListaTiposPage {
     return "http://agenda.publibarrio.cl:3789/api/get-img/" + imagen;
   }
 
+  icon(imagen:string){
+    return "http://agenda.publibarrio.cl:3789/api/get-icon/" + imagen;
+  }
+
   compartir(evento:any){
     this.socialSharing.share(evento.name, evento.tipo, this.imagen(evento.image), "http://agenda.publibarrio.cl").then(()=>{
       

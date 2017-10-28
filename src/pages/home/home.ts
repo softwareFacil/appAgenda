@@ -52,6 +52,10 @@ export class HomePage {
     return "http://agenda.publibarrio.cl:3789/api/get-img/" + imagen;
   }
 
+  icon(imagen:string){
+    return "http://agenda.publibarrio.cl:3789/api/get-icon/" + imagen;
+  }
+
   info(evento:any){
     this.navCtrl.push(DescripPage, {"evento":evento});
   }
