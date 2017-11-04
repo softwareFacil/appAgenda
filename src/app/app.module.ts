@@ -18,6 +18,7 @@ import { HttpModule } from '@angular/http';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Toast } from '@ionic-native/toast';
 import { CallNumber } from '@ionic-native/call-number';
+import { Calendar } from '@ionic-native/calendar';
 
 // mapa
 import { AgmCoreModule } from '@agm/core';
@@ -55,7 +56,8 @@ import { AgmCoreModule } from '@agm/core';
     ObtenerProvider,
     SocialSharing,
     Toast,
-    CallNumber
+    CallNumber,
+    Calendar
   ]
 })
 export class AppModule {}

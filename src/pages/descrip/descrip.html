@@ -27,6 +27,9 @@
       <h2 text-wrap>{{evento.name}}</h2>
       <p>{{evento.fecha_inicio}}</p>
       <p>{{evento.fecha_termino}}</p>
+      <button ion-button icon-only item-end (click)="crearEvento(evento)" color="secondary">
+        <ion-icon name="calendar"></ion-icon>
+      </button>
     </ion-item>
     <ion-item>
       <h2>Detalles</h2>

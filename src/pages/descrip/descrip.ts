@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { CallNumber } from '@ionic-native/call-number';
+import { Calendar } from '@ionic-native/calendar';
 
 
 
@@ -20,8 +21,10 @@ export class DescripPage {
   evento: any;
   map: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private callNumber: CallNumber, private alerCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private callNumber: CallNumber, private alerCtrl: AlertController, private calendar: Calendar) {
     this.evento = this.navParams.get("evento");
+    let fechaI: Date = new Date(this.evento.fecha_inicio);
+    console.log(fechaI);
   }
 
   ionViewDidLoad() {
@@ -70,8 +73,21 @@ export class DescripPage {
       ]
     });
     confirm.present()
+  }
 
-
+  crearEvento(evento){
+    if (this.calendar.hasWritePermission()) {
+      let fechaI: Date = new Date(evento.fecha_inicio);
+      fechaI.setDate(fechaI.getDate()+1);
+      let fechaF: Date = new Date(evento.fecha_termino);
+      fechaF.setDate(fechaF.getDate()+1); 
+      this.calendar.createEventInteractively(evento.name, evento.ubicacion.nombre,'',fechaI,fechaF).then(()=>{
+      }).catch((error)=>{
+        console.error(error);
+      })
+    } else {
+      console.log("no hay permisos")
+    }
   }
 
 }
