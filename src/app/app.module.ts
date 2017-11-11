@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TiposPage } from "../pages/tipos/tipos";
 import { DescripPage } from "../pages/descrip/descrip";
+import { LugaresPage } from "../pages/lugares/lugares";
 //database
 import { ObtenerProvider } from '../providers/obtener/obtener';
 import { HttpModule } from '@angular/http';
@@ -29,7 +30,8 @@ import { AgmCoreModule } from '@agm/core';
     HomePage,
     TiposPage,
     ListaTiposPage,
-    DescripPage
+    DescripPage,
+    LugaresPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { AgmCoreModule } from '@agm/core';
     HomePage,
     TiposPage,
     ListaTiposPage,
-    DescripPage
+    DescripPage,
+    LugaresPage
   ],
   providers: [
     StatusBar,

@@ -1,8 +1,10 @@
+import { LugaresPage } from './../pages/lugares/lugares';
 import { Component } from '@angular/core';
 import { Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TiposPage } from "../pages/tipos/tipos";
+
 
 import { HomePage } from '../pages/home/home';
 @Component({
@@ -12,6 +14,7 @@ export class MyApp {
   rootPage:any = HomePage;
   home = HomePage;
   tipos = TiposPage;
+  lugares = LugaresPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl:MenuController) {
     platform.ready().then(() => {
