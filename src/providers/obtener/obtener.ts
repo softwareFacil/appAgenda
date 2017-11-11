@@ -12,15 +12,15 @@ import 'rxjs/add/operator/map';
 export class ObtenerProvider {
 
   eventos:any [] = [];
-  url = "http://agenda.publibarrio.cl:3789/api/events/";
-  url2 = "http://agenda.publibarrio.cl:3789/api/type-event/";
+  catergories:any [] = [];
+  url = "http://agenda.publibarrio.cl:3789/api/";
 
   constructor(private http: Http) {
     console.log('Hello ObtenerProvider Provider');
   }
 
   getEventos(){
-    return this.http.get(this.url).map(res =>{
+    return this.http.get(this.url + "events/").map(res =>{
       //console.log(res.json().events);
 
       this.eventos = res.json().events;
@@ -30,15 +30,42 @@ export class ObtenerProvider {
   }
 
   getEventosType(tipo:string){
-    let body = "type="+tipo;
-    let headers = new Headers({
-      'Content-Type':'application/x-www-form-urlencoded'
-    });
+    return this.http.get(this.url + "getEventsByType/" + tipo).map(res =>{
+      //console.log(res.json().events);
 
-    return this.http.post(this.url2, body, {headers}).map(res =>{
-      this.eventos = res.json().typeEvent;
+      this.eventos = res.json().events;
       console.log(this.eventos);
       return res.json().events;
+    })
+  }
+
+  getEventOByOrganization(org:string){
+    return this.http.get(this.url + "getEventsByOrg/" + org).map(res =>{
+      //console.log(res.json().events);
+
+      this.eventos = res.json().events;
+      console.log(this.eventos);
+      return res.json().events;
+    })
+  }
+
+  getEventOBySpace(space:string){
+    return this.http.get(this.url + "getEventsBySpace/" + space).map(res =>{
+      //console.log(res.json().events);
+
+      this.eventos = res.json().events;
+      console.log(this.eventos);
+      return res.json().events;
+    })
+  }
+
+  getCategorias(){
+    return this.http.get(this.url + "getCategories/").map(res =>{
+      //console.log(res.json().events);
+
+      this.catergories = res.json().Catergories;
+      console.log(this.catergories);
+      return res.json().Catergories;
     })
   }
 

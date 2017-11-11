@@ -1,7 +1,7 @@
 import { ListaTiposPage } from './../lista-tipos/lista-tipos';
-import { TIPOS } from './../../data/data.tipos';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { ObtenerProvider } from "../../providers/obtener/obtener";
 
 
 
@@ -19,10 +19,9 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
 })
 export class TiposPage {
 
-  tipos:any[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private menuCtrl:MenuController) {
-    this.tipos = TIPOS.slice(0);
+  constructor(public navCtrl: NavController, public navParams: NavParams, private menuCtrl:MenuController, private _obs:ObtenerProvider) {
+    this._obs.getCategorias().subscribe();
   }
 
   ionViewDidLoad() {
