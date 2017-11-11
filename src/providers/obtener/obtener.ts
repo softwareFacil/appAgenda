@@ -71,12 +71,12 @@ export class ObtenerProvider {
   }
 
   getLugares(){
-    return this.http.get(this.url + "getEventsBySpace/").map(res =>{
+    return this.http.get(this.url + "getLocations/").map(res =>{
       //console.log(res.json().events);
 
-      this.lugares = res.json().events;
+      this.lugares = res.json().Locations;
       console.log(this.lugares);
-      return res.json().events;
+      return res.json().Locations;
     })
   }
 

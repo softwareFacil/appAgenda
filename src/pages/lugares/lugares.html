@@ -20,7 +20,7 @@
 
 <ion-content padding class="contenido">
   <ion-list>
-    <button ion-item *ngFor="let lug of _obs.lugares" (click)="selectTipo(lug.actividades)" color="paleta2">
+    <button ion-item *ngFor="let lug of _obs.lugares" (click)="selectTipo(lug.name)" color="paleta2">
       {{ lug.name }}
     </button>
   </ion-list>

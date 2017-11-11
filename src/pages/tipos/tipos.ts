@@ -29,7 +29,7 @@ export class TiposPage {
   }
 
   selectTipo(tipo:string){
-    this.navCtrl.push(ListaTiposPage,{ 'tipo':tipo });
+    this.navCtrl.push(ListaTiposPage,{ 'tipo':tipo, 'casoL':false });
   }
 
   menuToogle(){

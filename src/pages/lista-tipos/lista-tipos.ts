@@ -20,11 +20,19 @@ import { DescripPage } from '../descrip/descrip';
 })
 export class ListaTiposPage {
   tipo:string;
+  lugar:string;
+  casoL;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _obs:ObtenerProvider, private socialSharing: SocialSharing, private toast: Toast) {
     this.tipo = this.navParams.get("tipo");
+    this.lugar = this.navParams.get("lugar");
+    this.casoL = this.navParams.get("casoL");
     console.log(this.tipo);
-    this._obs.getEventosType(this.tipo).subscribe();
+    if (this.casoL) {
+      this._obs.getEventOBySpace(this.lugar).subscribe();
+    } else {
+      this._obs.getEventosType(this.tipo).subscribe();
+    }
   }
 
   ionViewDidLoad() {
@@ -53,7 +61,11 @@ export class ListaTiposPage {
 
   recargar(refresher:any){
     setTimeout(() => {
-      this._obs.getEventosType(this.tipo).subscribe();
+      if (this.casoL) {
+        this._obs.getEventOBySpace(this.lugar).subscribe();
+      } else {
+        this._obs.getEventosType(this.tipo).subscribe();
+      }
       refresher.complete();
     }, 1000);
   }

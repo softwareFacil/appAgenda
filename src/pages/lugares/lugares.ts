@@ -25,8 +25,8 @@ export class LugaresPage {
     console.log('ionViewDidLoad LugaresPage');
   }
 
-  selectTipo(tipo:string){
-    this.navCtrl.push(ListaTiposPage,{ 'tipo':tipo });
+  selectTipo(lugar:string){
+    this.navCtrl.push(ListaTiposPage,{ 'lugar':lugar, 'casoL':true });
   }
 
   menuToogle(){
