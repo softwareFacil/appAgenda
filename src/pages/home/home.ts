@@ -14,21 +14,15 @@ import { Toast } from '@ionic-native/toast';
 })
 export class HomePage {
 
-  eventos:Array<any[]> = [];
-
   constructor(public navCtrl: NavController, private menuCtrl:MenuController,
                private _obs:ObtenerProvider, private statusBar: StatusBar, 
                private socialSharing: SocialSharing, private toast: Toast) {
 
                 
     this.statusBar.backgroundColorByHexString('#69d0b3');
-    this._obs.getEventos().subscribe((events)=>{
-      for (var i = 0; i < events.length; i++) {
-        this.eventos.push(events[i].ubicacion);
-      }
-      console.log(this.eventos);
-    });
+    this._obs.getEventos().subscribe();
   }
+
 
   menuToogle(){
     this.menuCtrl.toggle();
@@ -36,12 +30,7 @@ export class HomePage {
 
   recargar(refresher:any){
     setTimeout(() => {
-      this._obs.getEventos().subscribe((events)=>{
-        for (var i = 0; i < events.length; i++) {
-          this.eventos.push(events[i].ubicacion);
-        }
-        console.log(this.eventos);
-      });
+      this._obs.getEventos().subscribe();
       refresher.complete();
     }, 1000);
   }

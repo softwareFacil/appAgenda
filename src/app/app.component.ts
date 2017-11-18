@@ -15,6 +15,7 @@ export class MyApp {
   home = HomePage;
   tipos = TiposPage;
   lugares = LugaresPage;
+  splash = true;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl:MenuController) {
     platform.ready().then(() => {
@@ -22,6 +23,10 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      setTimeout(()=>{
+        this.splash = false;
+        console.log(this.splash);
+      }, 3200);
     });
   }
 
