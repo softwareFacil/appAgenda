@@ -1,3 +1,4 @@
+import { IntroPage } from './../pages/intro/intro';
 import { ListaTiposPage } from './../pages/lista-tipos/lista-tipos';
 import { Http } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 import { TiposPage } from "../pages/tipos/tipos";
 import { DescripPage } from "../pages/descrip/descrip";
 import { LugaresPage } from "../pages/lugares/lugares";
+
 //database
 import { ObtenerProvider } from '../providers/obtener/obtener';
 import { HttpModule } from '@angular/http';
@@ -20,9 +22,11 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { Toast } from '@ionic-native/toast';
 import { CallNumber } from '@ionic-native/call-number';
 import { Calendar } from '@ionic-native/calendar';
+import { IonicStorageModule } from '@ionic/storage';
 
 // mapa
 import { AgmCoreModule } from '@agm/core';
+import { AjustesProvider } from '../providers/ajustes/ajustes';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { AgmCoreModule } from '@agm/core';
     TiposPage,
     ListaTiposPage,
     DescripPage,
-    LugaresPage
+    LugaresPage,
+    IntroPage
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,7 @@ import { AgmCoreModule } from '@agm/core';
       backButtonText: 'Atras'
     }),
     HttpModule,
+    IonicStorageModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA6J0gcKRKXzclKg-uA5_0CUGfX03pPeWc'
     })
@@ -50,7 +56,8 @@ import { AgmCoreModule } from '@agm/core';
     TiposPage,
     ListaTiposPage,
     DescripPage,
-    LugaresPage
+    LugaresPage,
+    IntroPage
   ],
   providers: [
     StatusBar,
@@ -60,7 +67,8 @@ import { AgmCoreModule } from '@agm/core';
     SocialSharing,
     Toast,
     CallNumber,
-    Calendar
+    Calendar,
+    AjustesProvider
   ]
 })
 export class AppModule {}

@@ -1,3 +1,5 @@
+import { IntroPage } from './../pages/intro/intro';
+import { AjustesProvider } from './../providers/ajustes/ajustes';
 import { LugaresPage } from './../pages/lugares/lugares';
 import { Component } from '@angular/core';
 import { Platform, MenuController } from 'ionic-angular';
@@ -6,18 +8,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TiposPage } from "../pages/tipos/tipos";
 
 
+
+
 import { HomePage } from '../pages/home/home';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any;
   home = HomePage;
   tipos = TiposPage;
   lugares = LugaresPage;
+  intro = IntroPage;
   splash = true;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl:MenuController) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl:MenuController, private _ajustes:AjustesProvider) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -27,6 +32,14 @@ export class MyApp {
         this.splash = false;
         console.log(this.splash);
       }, 3200);
+      this._ajustes.cargar_storage().then(()=>{
+        if (this._ajustes.ajustes.mostrar_tutorial) {
+          this.rootPage = IntroPage;
+        } else {
+          this.rootPage = HomePage;
+        }
+      })
+
     });
   }
 
