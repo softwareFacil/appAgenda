@@ -1,27 +1,36 @@
 page-org {
     .card-background-page {
-        
+
           ion-card {
             position: relative;
             text-align: center;
+
           }
-        
+          .card-img{
+            filter: blur(6px);
+          }
           .card-title {
             position: absolute;
             top: 36%;
             font-size: 2.0em;
             width: 100%;
             font-weight: bold;
-            color: #fff;
+            color: #411233;
           }
-        
+
           .card-subtitle {
-            font-size: 1.0em;
+            font-size: 1.2em;
             position: absolute;
             top: 52%;
             width: 100%;
-            color: #fff;
+            color: #e52e33;
+            //paleta0: #ff5733,
+            //paleta1: #ea9713,
+            //paleta2: #ceded0,
+            //paleta3: #e52e33,
+            //paleta4: #585858,
+            //paleta5: #411233
           }
-        
+
         }
 }
