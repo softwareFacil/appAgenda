@@ -14,6 +14,7 @@ export class ObtenerProvider {
   eventos:any [] = [];
   catergories:any [] = [];
   lugares:any [] = [];
+  org:any [] = [];
   url = "http://agenda.publibarrio.cl:3789/api/";
 
   constructor(private http: Http) {
@@ -77,6 +78,16 @@ export class ObtenerProvider {
       this.lugares = res.json().Locations;
       console.log(this.lugares);
       return res.json().Locations;
+    })
+  }
+
+  getOrg(){
+    return this.http.get(this.url + "getOrganization/").map(res =>{
+      //console.log(res.json().events);
+
+      this.org = res.json().usuario;
+      console.log(this.org);
+      return res.json().usuario;
     })
   }
 

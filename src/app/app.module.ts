@@ -1,3 +1,4 @@
+import { OrgPage } from './../pages/org/org';
 import { IntroPage } from './../pages/intro/intro';
 import { ListaTiposPage } from './../pages/lista-tipos/lista-tipos';
 import { Http } from '@angular/http';
@@ -36,7 +37,8 @@ import { AjustesProvider } from '../providers/ajustes/ajustes';
     ListaTiposPage,
     DescripPage,
     LugaresPage,
-    IntroPage
+    IntroPage,
+    OrgPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { AjustesProvider } from '../providers/ajustes/ajustes';
     ListaTiposPage,
     DescripPage,
     LugaresPage,
-    IntroPage
+    IntroPage,
+    OrgPage
   ],
   providers: [
     StatusBar,

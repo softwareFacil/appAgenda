@@ -1,3 +1,4 @@
+import { OrgPage } from './../pages/org/org';
 import { IntroPage } from './../pages/intro/intro';
 import { AjustesProvider } from './../providers/ajustes/ajustes';
 import { LugaresPage } from './../pages/lugares/lugares';
@@ -6,9 +7,6 @@ import { Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TiposPage } from "../pages/tipos/tipos";
-
-
-
 
 import { HomePage } from '../pages/home/home';
 @Component({
@@ -20,6 +18,7 @@ export class MyApp {
   tipos = TiposPage;
   lugares = LugaresPage;
   intro = IntroPage;
+  org = OrgPage;
   splash = true;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl:MenuController, private _ajustes:AjustesProvider) {
