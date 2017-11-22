@@ -1,3 +1,4 @@
+import { Descrip2Page } from './../pages/descrip2/descrip2';
 import { OrgPage } from './../pages/org/org';
 import { IntroPage } from './../pages/intro/intro';
 import { ListaTiposPage } from './../pages/lista-tipos/lista-tipos';
@@ -7,6 +8,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -38,7 +40,8 @@ import { AjustesProvider } from '../providers/ajustes/ajustes';
     DescripPage,
     LugaresPage,
     IntroPage,
-    OrgPage
+    OrgPage,
+    Descrip2Page
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { AjustesProvider } from '../providers/ajustes/ajustes';
     DescripPage,
     LugaresPage,
     IntroPage,
-    OrgPage
+    OrgPage,
+    Descrip2Page
   ],
   providers: [
     StatusBar,

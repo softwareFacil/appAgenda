@@ -1,6 +1,8 @@
+import { Descrip2Page } from './../descrip2/descrip2';
 import { ObtenerProvider } from './../../providers/obtener/obtener';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+
 
 
 /**
@@ -42,6 +44,10 @@ export class OrgPage {
 
   imagen(imagen:string){
     return "http://agenda.publibarrio.cl:3789/api/get-img/" + imagen;
+  }
+
+  descrip(org:any){
+    this.navCtrl.push(Descrip2Page, {"org":org});
   }
 
 }

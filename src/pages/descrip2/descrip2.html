@@ -1,0 +1,45 @@
+<!--
+  Generated template for the Descrip2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{org.name}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only icon-right>
+        <ion-icon>
+          <img src="assets/logo.svg" alt="" height="10%" width="50px">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+  <ion-card>
+      <img [src]="icon(org.foto)">
+  </ion-card>
+
+  <ion-item>
+      <h2>Descripcion</h2>
+      <p text-wrap>{{org.descripcion}}</p>
+    </ion-item>
+
+    <ion-item (click)="llamar(org.fono)">
+        <ion-icon name="call" item-start></ion-icon>
+        <ion-label>{{org.fono}}</ion-label>
+      </ion-item>
+    <ion-item>
+      <ion-icon name="mail" item-start></ion-icon>
+      <ion-label>{{org.email}}</ion-label>
+    </ion-item>
+</ion-list>
+
+
+</ion-content>
