@@ -21,7 +21,7 @@
   <ion-refresher (ionRefresh)="recargar($event)" color="paleta5">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-card color="paleta4" *ngFor="let evento of (_obs.eventos)?.reverse()">
+  <ion-card color="paleta3" *ngFor="let evento of (_obs.eventos)?.reverse()">
     <ion-item color="paleta0">
       <ion-avatar item-start>
         <img [src]="icon(evento.icon)">
