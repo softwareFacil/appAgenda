@@ -17,15 +17,15 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
 
 ion-content {
-    background-color: #49c8ce !important;
+    background-color: #ea9713 !important;
     font-family:'Raleway';
 }
 
 .contenido{
-    background: #49c8ce
+    background: #585858
 }
 .barra-menu{
-    background: #69d0b3
+    background: #ceded0
 }
 .card-ios {
   border-radius: 7px;
@@ -54,7 +54,7 @@ ion-content {
 }
 
 .flb {
-  background-color: #49c8ce;
+  background-color: #ea9713;
   height:100%;
   width:100%;
   animation: pulse 1s linear forwards;
@@ -93,7 +93,7 @@ ion-content {
 
 /* Generated with Bounce.js. Edit at https://goo.gl/sc4bdG */
 
-@-webkit-keyframes animation { 
+@-webkit-keyframes animation {
   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -500, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -500, 0, 0, 1); }
   0.84% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -282.728, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -282.728, 0, 0, 1); }
   1.69% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -149.309, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -149.309, 0, 0, 1); }
@@ -126,10 +126,10 @@ ion-content {
   68.13% { -webkit-transform: matrix3d(49.695, 0, 0, 0, 0, 49.695, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(49.695, 0, 0, 0, 0, 49.695, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   79.82% { -webkit-transform: matrix3d(50.02, 0, 0, 0, 0, 50.02, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(50.02, 0, 0, 0, 0, 50.02, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   91.57% { -webkit-transform: matrix3d(49.999, 0, 0, 0, 0, 49.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(49.999, 0, 0, 0, 0, 49.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  100% { -webkit-transform: matrix3d(50, 0, 0, 0, 0, 50, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(50, 0, 0, 0, 0, 50, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
+  100% { -webkit-transform: matrix3d(50, 0, 0, 0, 0, 50, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(50, 0, 0, 0, 0, 50, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 }
 
-@keyframes animation { 
+@keyframes animation {
   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -500, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -500, 0, 0, 1); }
   0.84% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -282.728, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -282.728, 0, 0, 1); }
   1.69% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -149.309, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -149.309, 0, 0, 1); }
@@ -162,6 +162,5 @@ ion-content {
   68.13% { -webkit-transform: matrix3d(49.695, 0, 0, 0, 0, 49.695, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(49.695, 0, 0, 0, 0, 49.695, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   79.82% { -webkit-transform: matrix3d(50.02, 0, 0, 0, 0, 50.02, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(50.02, 0, 0, 0, 0, 50.02, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   91.57% { -webkit-transform: matrix3d(49.999, 0, 0, 0, 0, 49.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(49.999, 0, 0, 0, 0, 49.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  100% { -webkit-transform: matrix3d(50, 0, 0, 0, 0, 50, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(50, 0, 0, 0, 0, 50, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
+  100% { -webkit-transform: matrix3d(50, 0, 0, 0, 0, 50, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(50, 0, 0, 0, 0, 50, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 }
-
