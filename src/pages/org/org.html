@@ -29,7 +29,7 @@
   </ion-refresher>
 
   <ion-card *ngFor="let org of (_obs.org)?.reverse()">
-    <img [src]="icon(org.foto)"/>
+    <img class= "card-img" [src]="icon(org.foto)"/>
     <div class="card-title">{{org.name}}</div>
     <div class="card-subtitle">{{org.email}}</div>
   </ion-card>
