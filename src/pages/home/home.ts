@@ -1,6 +1,6 @@
 import { DescripPage } from './../descrip/descrip';
 import { Component } from '@angular/core';
-import { NavController, MenuController } from 'ionic-angular';
+import { NavController, MenuController, LoadingController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { ObtenerProvider } from "../../providers/obtener/obtener";
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,7 +16,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private menuCtrl:MenuController,
                private _obs:ObtenerProvider, private statusBar: StatusBar,
-               private socialSharing: SocialSharing, private toast: Toast) {
+               private socialSharing: SocialSharing, private toast: Toast, private loadingCtrl: LoadingController) {
 
 
     this.statusBar.backgroundColorByHexString('#ea9713');
@@ -36,8 +36,12 @@ export class HomePage {
   }
 
   compartir(evento:any){
+    let loader = this.loadingCtrl.create({
+      content: "Cargando..."
+    });
+    loader.present();
     this.socialSharing.share(evento.name, evento.tipo, this.imagen(evento.image), "http://agenda.publibarrio.cl").then(()=>{
-
+      loader.dismiss();
     }).catch(()=>{
       this.toast.show(`No fue compartido!!`, '3000', 'center').subscribe(
         toast => {
