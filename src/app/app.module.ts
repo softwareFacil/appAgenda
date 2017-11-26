@@ -1,3 +1,4 @@
+import { MapaPage } from './../pages/mapa/mapa';
 import { Descrip2Page } from './../pages/descrip2/descrip2';
 import { OrgPage } from './../pages/org/org';
 import { IntroPage } from './../pages/intro/intro';
@@ -26,10 +27,13 @@ import { Toast } from '@ionic-native/toast';
 import { CallNumber } from '@ionic-native/call-number';
 import { Calendar } from '@ionic-native/calendar';
 import { IonicStorageModule } from '@ionic/storage';
+import { Geolocation } from '@ionic-native/geolocation';
 
 // mapa
 import { AgmCoreModule } from '@agm/core';
 import { AjustesProvider } from '../providers/ajustes/ajustes';
+import { UbicacionProvider } from '../providers/ubicacion/ubicacion';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +45,8 @@ import { AjustesProvider } from '../providers/ajustes/ajustes';
     LugaresPage,
     IntroPage,
     OrgPage,
-    Descrip2Page
+    Descrip2Page,
+    MapaPage
   ],
   imports: [
     BrowserModule,
@@ -64,7 +69,8 @@ import { AjustesProvider } from '../providers/ajustes/ajustes';
     LugaresPage,
     IntroPage,
     OrgPage,
-    Descrip2Page
+    Descrip2Page,
+    MapaPage
   ],
   providers: [
     StatusBar,
@@ -75,7 +81,9 @@ import { AjustesProvider } from '../providers/ajustes/ajustes';
     Toast,
     CallNumber,
     Calendar,
-    AjustesProvider
+    AjustesProvider,
+    UbicacionProvider,
+    Geolocation
   ]
 })
 export class AppModule {}
