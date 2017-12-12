@@ -18,9 +18,10 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
   templateUrl: 'org.html',
 })
 export class OrgPage {
-
+  tipo:string;
   constructor(public navCtrl: NavController, public navParams: NavParams, private menuCtrl:MenuController, private _obs:ObtenerProvider) {
     this._obs.getOrg().subscribe();
+    this._obs.getTipoOrg().subscribe();
   }
 
   ionViewDidLoad() {
@@ -49,5 +50,19 @@ export class OrgPage {
   descrip(org:any){
     this.navCtrl.push(Descrip2Page, {"org":org});
   }
+
+  ifTipo(tipo:any){
+    if(this.tipo == "todos"){
+      return true;
+    }else{
+      if(this.tipo == tipo){
+        return true;
+      }else{
+        return false;
+      }
+    }
+    
+  }
+
 
 }
