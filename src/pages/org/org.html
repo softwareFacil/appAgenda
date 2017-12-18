@@ -26,14 +26,7 @@
 
 
 <ion-content padding class="card-background-page">
-  <ion-item>
-    <ion-label>Tipo</ion-label>
-    <ion-select [(ngModel)]="tipo" cancelText="Cancelar" okText="Seleccionar">
-      <ion-option value="todos" selected="true">Todos</ion-option>
-      <ion-option *ngFor="let tip of _obs.tipoOrg" [value]="tip.nombre">{{tip.nombre}}</ion-option>
-
-    </ion-select>
-  </ion-item>
+  
   <ion-refresher (ionRefresh)="recargar($event)" color="paleta5">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
@@ -46,3 +39,16 @@
   </div>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+      <ion-label>Tipo</ion-label>
+      <ion-select [(ngModel)]="tipo" cancelText="Cancelar" okText="Seleccionar">
+        <ion-option value="todos" selected="true">Todos</ion-option>
+        <ion-option *ngFor="let tip of _obs.tipoOrg" [value]="tip.nombre">{{tip.nombre}}</ion-option>
+  
+      </ion-select>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>
