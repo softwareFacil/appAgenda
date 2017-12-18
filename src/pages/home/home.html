@@ -21,12 +21,12 @@
   <ion-refresher (ionRefresh)="recargar($event)" color="paleta5">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-card color="paleta0" *ngFor="let evento of (_obs.eventos)?.reverse()">
-    <ion-item color="paleta0">
+  <ion-card *ngFor="let evento of (_obs.eventos)?.reverse()">
+    <ion-item>
       <ion-avatar item-start>
         <img [src]="icon(evento.icon)">
       </ion-avatar>
-      <h2 text-wrap>{{evento.name}}</h2>
+      <h2 text-wrap text-capitalize>{{evento.name}}</h2>
       <p>{{evento.fecha_inicio}}</p>
       <p>{{evento.fecha_termino}}</p>
       <!-- <ion-avatar item-end>
@@ -40,11 +40,11 @@
       <p>{{evento.descripcion}}</p>
     </ion-card-content>
     <ion-buttons end>
-      <button ion-button icon-left clear small (click)="info(evento)" color="paleta6">
+      <button ion-button icon-left clear small (click)="info(evento)" color="primary">
         <ion-icon name="information"></ion-icon>
         Info
       </button>
-      <button ion-button icon-left clear small (click)="compartir(evento)" color="paleta6">
+      <button ion-button icon-left clear small (click)="compartir(evento)" color="primary">
         <ion-icon name="share-alt"></ion-icon>
         Compartir
       </button>

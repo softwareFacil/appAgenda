@@ -32,7 +32,7 @@
       <h2 text-wrap>{{evento.name}}</h2>
       <p>{{evento.fecha_inicio}}</p>
       <p>{{evento.fecha_termino}}</p>
-      <button ion-button icon-only item-end  round large (click)="crearEvento(evento)" color="danger">
+      <button ion-button icon-only item-end  round large (click)="crearEvento(evento)" color="primary">
         <ion-icon name="calendar"></ion-icon>
       </button>
     </ion-item>
@@ -48,7 +48,7 @@
       <ion-icon name="pin" item-start color="danger"></ion-icon>
       <ion-label>{{evento.ubicacion.nombre}}</ion-label>
 
-      <button ion-button icon-only item-end round large (click)="mostrarMapa()" color="danger">
+      <button ion-button icon-only item-end round large (click)="mostrarMapa()" color="primary">
         <ion-icon name="map"></ion-icon>
       </button>
 

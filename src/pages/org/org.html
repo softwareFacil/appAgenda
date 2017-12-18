@@ -25,7 +25,7 @@
 </ion-header>
 
 
-<ion-content padding class="card-background-page">
+<ion-content padding class="contenido card-background-page">
   
   <ion-refresher (ionRefresh)="recargar($event)" color="paleta5">
     <ion-refresher-content></ion-refresher-content>
@@ -34,7 +34,6 @@
     <ion-card (click)="descrip(org)" *ngIf="ifTipo(org.Type)">
       <img class="card-img" [src]="icon(org.foto)" />
       <div class="card-title">{{org.name}}</div>
-      <div class="card-subtitle">{{org.email}}</div>
     </ion-card>
   </div>
 

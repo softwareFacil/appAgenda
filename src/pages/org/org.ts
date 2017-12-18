@@ -18,7 +18,7 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
   templateUrl: 'org.html',
 })
 export class OrgPage {
-  tipo:string;
+  tipo:string = "todos";
   constructor(public navCtrl: NavController, public navParams: NavParams, private menuCtrl:MenuController, private _obs:ObtenerProvider) {
     this._obs.getOrg().subscribe();
     this._obs.getTipoOrg().subscribe();
@@ -52,7 +52,7 @@ export class OrgPage {
   }
 
   ifTipo(tipo:any){
-    if(this.tipo == "todos"){
+    if(this.tipo == "todos" || this.tipo == null){
       return true;
     }else{
       if(this.tipo == tipo){
