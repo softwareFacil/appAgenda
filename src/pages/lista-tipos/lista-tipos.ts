@@ -48,7 +48,7 @@ export class ListaTiposPage {
   }
 
   compartir(evento:any){
-    this.socialSharing.share(evento.name, evento.tipo, this.imagen(evento.image), "http://agenda.publibarrio.cl/" + evento._id).then(()=>{
+    this.socialSharing.share(evento.name, evento.tipo, this.imagen(evento.image), "http://agenda.publibarrio.cl/#/view/" + evento._id).then(()=>{
       
     }).catch(()=>{
       this.toast.show(`No fue compartido!!`, '3000', 'center').subscribe(
