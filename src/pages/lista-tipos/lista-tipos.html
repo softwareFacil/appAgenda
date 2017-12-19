@@ -24,8 +24,8 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-card color="paleta0" *ngFor="let evento of (_obs.eventos)?.reverse()">
-    <ion-item color="paleta0">
+  <ion-card *ngFor="let evento of (_obs.eventos)?.reverse()">
+    <ion-item>
       <ion-avatar item-start>
         <img [src]="icon(evento.icon)">
       </ion-avatar>
